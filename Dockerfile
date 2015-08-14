@@ -10,4 +10,3 @@ RUN export PATH=/usr/local/helloworldapp/bin:$PATH
 RUN cd /usr/local/helloworldapp/bin
 RUN wget --no-check-certificate  https://raw.githubusercontent.com/testwlmorg/testdock/master/a.out -O helloworld 
 RUN chmod 777 helloworld
-RUN helloworld
