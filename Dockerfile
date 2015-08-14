@@ -11,7 +11,7 @@ RUN mkdir -p /usr/local/helloworldapp/bin
 RUN echo $PATH
 RUN export PATH=/usr/local/helloworldapp:$PATH
 RUN which gcc
-RUN wget --no-check-certificate  https://github.com/testwlmorg/testdock.git/master -O /helloworldapp/
+RUN wget --no-check-certificate  https://github.com/testwlmorg/testdock.git/master 
 RUN cd /usr/local/helloworldapp
 RUN gcc helloworld.c -o bin/helloworld
 RUN chmod 777 helloworld
