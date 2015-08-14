@@ -1,3 +1,5 @@
 FROM ubuntu:14.04
 MAINTAINER Sathya Raghunathan
-RUN $HOME/a.out 
+RUN cd /home/sathya3110
+RUN pwd
+RUN ./a.out 
