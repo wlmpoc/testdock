@@ -9,7 +9,7 @@ docker search registry --format 'table {{.Name}}\t{{.IsOfficial}}\t{{.IsAutomate
 docker run -d -p 5000:5000 --name dockerregistry --mount 'source=/srv/registry/data,target=/var/lib/registry,type=bind,ro=0' --restart always registry:2
 ```
 #### read only mount:
-```
+```docker
 docker run --name testcontainerformountoptions -d --mount "source=$(pwd),target=/usr/share/clouduser,type=bind,ro=1" ubuntu tail -f /dev/null
 ```
 > ***Exec into the container to test the read only mode***:
@@ -19,12 +19,12 @@ docker run --name testcontainerformountoptions -d --mount "source=$(pwd),target=
  Because the `-v` and `--volume` flags have been a part of Docker for a long time, their behavior cannot be changed. This means that there is one behavior that is different between -v and --mount. If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host, -v creates the endpoint for you. It is always created as a directory. If you use --mount to bind-mount a file or directory that does not yet exist on the Docker host, Docker does not automatically create it for you, but generates an error.
 
 **Image spec:**
-    manifest
-    image layers
-    image index
+ 1. manifest
+ 2. image layers
+ 3. image index
 
 **Example:**
-``
+```json
 {
   "schemaVersion": 2,
   "manifests": [
@@ -52,4 +52,25 @@ docker run --name testcontainerformountoptions -d --mount "source=$(pwd),target=
     "com.example.key2": "value2"
   }
 }
-``
+```
+
+**Container Spec:**
+1. namespaces, default devices (/dev/null ... ), filesystems
+2. cgroups
+3. capabilities
+4. LSM ?? , seccomp
+5. filesystem jails
+6. Rootfs mount propogation
+   - slave
+   - private
+   - unbindable
+   - shared
+
+**[Further Details in linux kernal documentation page](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)**
+
+**[Example Config.json file](https://github.com/opencontainers/runtime-spec/blob/master/config.md#configuration-schema-example)**
+```
+
+
+
+
