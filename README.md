@@ -69,8 +69,16 @@ docker run --name testcontainerformountoptions -d --mount "source=$(pwd),target=
 **[Further Details in linux kernal documentation page](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)**
 
 **[Example Config.json file](https://github.com/opencontainers/runtime-spec/blob/master/config.md#configuration-schema-example)**
-```
 
+### Docker system information:-
 
+``
+ docker system df
+| TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE |
+|---------------------------------------------------------------------------------------------|
+| Images              3                   3                   245.6MB             0B (0%)     |
+| Containers          4                   2                   185B                183B (98%)  |
+| Local Volumes       1                   0                   0B                  0B          |
+| Build Cache         0                   0                   0B                  0B          |
 
-
+---
