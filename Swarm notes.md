@@ -34,6 +34,35 @@ Orchestrators typically do the following:-
 --- Reverse uptime
 Introspection
 ---
+
+## After swarm is initialized- status:
+```
+Swarm: active
+ NodeID: hyold5lfo3vulnl38pyce59gx
+ Is Manager: true
+ ClusterID: x7g6kz41xq4os8kopsqj1felk
+ Managers: 1
+ Nodes: 1
+ Default Address Pool: 10.0.0.0/8  
+ SubnetSize: 24
+ Orchestration:
+  Task History Retention Limit: 5
+ Raft:
+  Snapshot Interval: 10000
+  Number of Old Snapshots to Retain: 0
+  Heartbeat Tick: 1
+  Election Tick: 10
+ Dispatcher:
+  Heartbeat Period: 5 seconds
+ CA Configuration:
+  Expiry Duration: 3 months
+  Force Rotate: 0
+ Autolock Managers: false
+ Root Rotation In Progress: false
+ Node Address: 13.232.6.122
+ Manager Addresses:
+  13.232.6.122:2377
+  ```
 ## Swarm Ports:
 
 |ports|function|protocol|
@@ -45,7 +74,7 @@ Introspection
 
 ---
 
-docker node ls output column values:-
+### docker node ls output column values:-
 
 |state|availability|manager status|
 |-----|------------|--------------|
@@ -55,6 +84,14 @@ docker node ls output column values:-
 |Disconnected|||
 
 ---
+
+### Global Service:-
+
+docker service scale httpd=3
+httpd: scale can only be used with replicated mode
+
+ docker service update --publish-add published=8080,target=80 httpd
+
 
 
 
