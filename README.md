@@ -74,11 +74,11 @@ docker run --name testcontainerformountoptions -d --mount "source=$(pwd),target=
 
 ``
  docker system df
-| TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE |
-|---------------------------------------------------------------------------------------------|
-| Images              3                   3                   245.6MB             0B (0%)     |
-| Containers          4                   2                   185B                183B (98%)  |
-| Local Volumes       1                   0                   0B                  0B          |
-| Build Cache         0                   0                   0B                  0B          |
+| TYPE         |       TOTAL      |         ACTIVE      |        SIZE         |       RECLAIMABLE |
+|--------------|------------------|---------------------|---------------------|-------------------|
+| Images       |       3          |         3           |        245.6MB      |       0B (0%)     |
+| Containers   |       4          |         2           |        185B         |       183B (98%)  |
+| Local Volumes|       1          |         0           |        0B           |       0B          |
+| Build Cache  |       0          |         0           |        0B           |       0B          |
 
 ---
