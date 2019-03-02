@@ -92,6 +92,12 @@ httpd: scale can only be used with replicated mode
 
  docker service update --publish-add published=8080,target=80 httpd
 
+---
 
+A N manager nodes swam can tolerate a maximum of loss of (N-1)/2 manager nodes at the same time
 
+Swarm root certificates can be rotated. Min duration - 1 hour and Max duration - 3 months
 
+The manager node generates two tokens to use when you join additional nodes to the swarm: one worker token and one manager token. Each token includes the digest of the root CA’s certificate and a randomly generated secret. When a node joins the swarm, the joining node uses the digest to validate the root CA certificate from the remote manager. The remote manager uses the secret to ensure the joining node is an approved node.
+
+Each time a new node joins the swarm, the manager issues a certificate to the node. The certificate contains a randomly generated node ID to identify the node under the certificate common name (CN) and the role under the organizational unit (OU). The node ID serves as the cryptographically secure node identity for the lifetime of the node in the current swarm.
