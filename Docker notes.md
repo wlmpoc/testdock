@@ -158,4 +158,4 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 
 ##### Depricated option --link:
 
-> you can use other mechanisms such as volumes to *share environment variables* between containers in a more controlled way
+> One feature that user-defined networks do not support that you can do with --link is sharing environment variables between containers. However you can use other mechanisms such as volumes to ***share** environment variables* between containers in a more controlled way
