@@ -160,30 +160,17 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 ##### Legacy default Bridge network:
 
 * if multiple services of the same application need to talk to each other we need to expose ports for all the services even if they are not external facing
-* To disconnect a container, we need to stop and then disconnect
-* It cannot 
+* To disconnect a container, we need to stop and then recreate it with different network options
+* It cannot be configured without restarting the docker daemon
 
 
 ---
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-0lax">Network Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layer in OSI Model</th>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Bridge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Link Layer (L2)</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Overlay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Network Layer (L3)</td>
-  </tr>
-</table>
-
+| Network Name | Layer in OSI Model |
+|--------------|--------------------|
+| Bridge       | Link layer (L2)    |
+| Overlay      | Network layer (L3) |
+| GatewayBridge| Virtual Bridge over Overlay|
 
 
 ##### Depricated option --link:
