@@ -99,11 +99,20 @@ bash: samplefile1: Read-only file systemcode here
 
 ``` 
  "SecurityOptions": [
-        "apparmor",
-        "seccomp",
-        "selinux"
+        "apparmor",     # This profile is used on containers, not on the Docker Daemon.
+        "seccomp",      # the profile is a whitelist which denies access to system calls by default, then whitelists specific system calls. Used on container and daemon 
+        "selinux"       # Used on container and daemon
     ]
+    
+$ docker run --rm -it --security-opt apparmor=docker-default hello-world
+
+$ docker run --rm -it --security-opt seccomp=/path/to/seccomp/profile.json hello-world
+
+$ docker run --rm -it --security-opt seccomp=unconfined debian:jessie unshare --map-root-user --user sh -c whoami
+
 ```
+
+
 ##### container bind options:
 1. rprivate
 2. rslave
