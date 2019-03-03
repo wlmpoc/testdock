@@ -177,3 +177,25 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 
 > One feature that user-defined networks do not support that you can do with --link is sharing environment variables between containers. However you can use other mechanisms such as volumes to ***share** environment variables* between containers in a more controlled way
 
+
+
+##### Prerequisite for creating docker overlay network:
+
+1. daemon should have access to a keyvalue store
+2. a cluster of host machines registered with keyvalue store
+3. a properly configured engine daemond on each host machine
+
+Note:- Overlay netowrk by default is created with one subnet. But we can configure this to span across multiple subnets
+
+```
+docker network create -d overlay \
+  --subnet=192.168.0.0/16 \
+  --subnet=192.170.0.0/16 \
+  --gateway=192.168.0.100 \
+  --gateway=192.170.0.100 \
+  --ip-range=192.168.1.0/24 \
+  --aux-address="my-router=192.168.1.5" --aux-address="my-switch=192.168.1.6" \
+  --aux-address="my-printer=192.170.1.5" --aux-address="my-nas=192.170.1.6" \
+  my-multihost-network
+  
+```
