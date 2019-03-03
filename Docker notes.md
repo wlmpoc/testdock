@@ -135,7 +135,6 @@ $ cat /etc/docker/daemon.json
 {
  "userns-remap": "docker_user"
 }
-
 ```
 Restart daemon:
 
@@ -153,5 +152,10 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
     "name=seccomp,profile=default",
     <b>"name=userns"</b>
 ]
-
 </pre>
+
+---
+
+##### Depricated option --link:
+
+> you can use other mechanisms such as volumes to *share environment variables* between containers in a more controlled way
