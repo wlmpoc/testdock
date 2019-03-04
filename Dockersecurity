@@ -1,0 +1,8 @@
+MTLS:
+
+
+Mutual transport layer security - provides message authentication, key material generation and supported cipher suites
+
+Docker swarm is based on MTLS
+
+Manger and workers use MTLS certificates that are created during swarm init in order to register themselves while joining the swarm
