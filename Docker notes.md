@@ -208,3 +208,9 @@ docker network create -d overlay \
   my-multihost-network
   
 ```
+
+---
+
+#### Docker Volumes:-
+
+The host directory is declared at container run-time: The host directory (the mountpoint) is, by its nature, host-dependent. This is to preserve image portability, since a given host directory can’t be guaranteed to be available on all hosts. For this reason, you can’t mount a host directory from within the Dockerfile. 
