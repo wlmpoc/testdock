@@ -180,6 +180,9 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 | Bridge       | Link layer (L2)    |
 | Overlay      | Network layer (L3) |
 | GatewayBridge| Virtual Bridge over Overlay|
+| ingress      | Transport layer (L4)|
+| Ucp External | Application layer (L7)|
+  routing mesh | Load balancing
 
 
 ##### Depricated option --link:
