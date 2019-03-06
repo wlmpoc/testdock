@@ -1,5 +1,5 @@
 ﻿#  Docker notes
-This file contains all of my dca stu[Garbage collection in Registry](https://docs.docker.com/registry/garbage-collection/)[Garbage collection in registry](https://docs.docker.com/registry/garbage-collection/)dy notes
+This file contains all of my dca study notes
 ### formatted output example:
 ```
 $ docker search registry --format 'table {{.Name}}\t{{.IsOfficial}}\t{{.IsAutomated}}'List item
@@ -81,8 +81,10 @@ bash: samplefile1: Read-only file systemcode here
 
 ### Docker system information:-
 
+Below is the output of the docker system df command. To get the disk usage
+
 ```
- docker system df
+ $ docker system df
 
 ```
 
@@ -97,10 +99,20 @@ bash: samplefile1: Read-only file systemcode here
 
 ## Container Security options:-
 
+<pre>
+
+$ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
+[
+    "name=apparmor",
+    "name=seccomp,profile=default",
+    <b>"name=userns"</b>
+]
+</pre>
+
 ``` 
  "SecurityOptions": [
         "apparmor",     # This profile is used on containers, not on the Docker Daemon.
-        "seccomp",      # the profile is a whitelist which denies access to system calls by default, then whitelists specific system calls. Used on container and daemon 
+        "seccomp",      # the profile is a **whitelist which denies access** to system calls by default, then whitelists specific system calls. Used on container and daemon 
         "selinux"       # Used on container and daemon
     ]
     
@@ -111,7 +123,6 @@ $ docker run --rm -it --security-opt seccomp=/path/to/seccomp/profile.json hello
 $ docker run --rm -it --security-opt seccomp=unconfined debian:jessie unshare --map-root-user --user sh -c whoami
 
 ```
-
 
 ##### container bind options:
 1. rprivate
@@ -129,6 +140,12 @@ $ docker run --rm -it --security-opt seccomp=unconfined debian:jessie unshare --
 ---
 
 ### Docker Namespaces:
+
+
+Adding a normal user to docker group is easier for developers to run docker commands without using sudo. But it has got security issues. If one creates a container and mount the host system root directory (/), then the container has full access to entire host system.
+
+To avoid this, userns_remap can be used
+**Eg:**
 
 Create user on docker host:
 
@@ -151,17 +168,10 @@ Restart daemon:
 $ systemctl restart docker.service
 
 ```
+When we create a container, the root user inside of it has full access to anything within container but cannot modify host directories
 
 Check docker info:
-<pre>
 
-$ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
-[
-    "name=apparmor",
-    "name=seccomp,profile=default",
-    <b>"name=userns"</b>
-]
-</pre>
 
 ---
 
@@ -218,18 +228,18 @@ The host directory is declared at container run-time: The host directory (the mo
 
 ### Registry:
 
-https://docs.docker.com/registry/garbage-collection/
+[Registry garbage collection](https://docs.docker.com/registry/garbage-collection/)
 
 
 ### DTR:
 
-[DTR Backup](https://docs.docker.com/ee/dtr/admin/disaster-recovery/create-a-backup/)
-[DTR Single sign on](https://docs.docker.com/ee/dtr/admin/configure/enable-single-sign-on/)
-[DTR Storage](https://docs.docker.com/ee/dtr/admin/configure/external-storage/nfs/)
-[DTR Garbage collection](https://docs.docker.com/ee/dtr/admin/configure/garbage-collection/)
+* [DTR Backup](https://docs.docker.com/ee/dtr/admin/disaster-recovery/create-a-backup/)
+* [DTR Single sign on](https://docs.docker.com/ee/dtr/admin/configure/enable-single-sign-on/)
+* [DTR Storage](https://docs.docker.com/ee/dtr/admin/configure/external-storage/nfs/)
+* [DTR Garbage collection](https://docs.docker.com/ee/dtr/admin/configure/garbage-collection/)
 
 ---
 
 ## **_Must read article_**:
 
-[Container networking model](https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/)
+**[Container networking model]**(https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/)
