@@ -1,5 +1,5 @@
-#  Docker notes
-This file contains all of my dca study notes
+﻿#  Docker notes
+This file contains all of my dca stu[Garbage collection in Registry](https://docs.docker.com/registry/garbage-collection/)[Garbage collection in registry](https://docs.docker.com/registry/garbage-collection/)dy notes
 ### formatted output example:
 ```
 $ docker search registry --format 'table {{.Name}}\t{{.IsOfficial}}\t{{.IsAutomated}}'List item
@@ -165,13 +165,11 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 
 ---
 
-
 ##### Legacy default Bridge network:
 
 * if multiple services of the same application need to talk to each other we need to expose ports for all the services even if they are not external facing
 * To disconnect a container, we need to stop and then recreate it with different network options
 * It cannot be configured without restarting the docker daemon
-
 
 ---
 
@@ -193,14 +191,14 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 
 ##### Prerequisite for creating docker overlay network:
 
-1. daemon should have access to a keyvalue store
-2. a cluster of host machines registered with keyvalue store
+1. daemon should have access to a key-value store
+2. a cluster of host machines registered with key-value store
 3. a properly configured engine daemond on each host machine
 
 Note:- Overlay netowrk by default is created with one subnet. But we can configure this to span across multiple subnets
 
 ```
-docker network create -d overlay \
+$ docker network create -d overlay \
   --subnet=192.168.0.0/16 \
   --subnet=192.170.0.0/16 \
   --gateway=192.168.0.100 \
@@ -211,9 +209,27 @@ docker network create -d overlay \
   my-multihost-network
   
 ```
+---
+
+### Docker Volumes:-
+
+The host directory is declared at container run-time: The host directory (the mountpoint) is, by its nature, host-dependent. This is to preserve image portability, since a given host directory can’t be guaranteed to be available on all hosts. For this reason, you can’t mount a host directory from within the Dockerfile. 
+
+
+### Registry:
+
+https://docs.docker.com/registry/garbage-collection/
+
+
+### DTR:
+
+[DTR Backup](https://docs.docker.com/ee/dtr/admin/disaster-recovery/create-a-backup/)
+[DTR Single sign on](https://docs.docker.com/ee/dtr/admin/configure/enable-single-sign-on/)
+[DTR Storage](https://docs.docker.com/ee/dtr/admin/configure/external-storage/nfs/)
+[DTR Garbage collection](https://docs.docker.com/ee/dtr/admin/configure/garbage-collection/)
 
 ---
 
-#### Docker Volumes:-
+## **_Must read article_**:
 
-The host directory is declared at container run-time: The host directory (the mountpoint) is, by its nature, host-dependent. This is to preserve image portability, since a given host directory can’t be guaranteed to be available on all hosts. For this reason, you can’t mount a host directory from within the Dockerfile. 
+[Container networking model](https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/)
