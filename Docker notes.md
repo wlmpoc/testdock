@@ -99,15 +99,7 @@ Below is the output of the docker system df command. To get the disk usage
 
 ## Container Security options:-
 
-<pre>
 
-$ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
-[
-    "name=apparmor",
-    "name=seccomp,profile=default",
-    <b>"name=userns"</b>
-]
-</pre>
 
 ``` 
  "SecurityOptions": [
@@ -166,6 +158,16 @@ Restart daemon:
 
 ```
 $ systemctl restart docker.service
+
+After addition of user namespace option to daemon, the output of docker info:
+
+$ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
+[
+    "name=apparmor",
+    "name=seccomp,profile=default",
+    "name=userns"             ## Note user namespace setting
+]
+
 
 ```
 When we create a container, the root user inside of it has full access to anything within container but cannot modify host directories
