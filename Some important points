@@ -1,12 +1,9 @@
-
-Narasimhas-MacBook-Air:testdock simha$ cat Some\ important\ points 
-DTR registry backup - what object are actually backed up and what objects are omitted from backup (image blobs, dtr configurations, repository metadata, role based access controls)
+DTR registry backup - what object are actually backed up and what objects are backed up and what are omitted from backup 
+(image blobs, dtr configurations, repository metadata, role based access controls)
 
 When running a container, in which case the docker engine itself creates a volume with a random id and name and attach to container without needing us to create one before hand
 
 content trust for image signing and verification - export DOCKER_CONTENT_TRUST=1 to enable on the shell rather than at the daemon level
-
-If a volume is created and mounted to a service whose replicas share same node (run on same node), the volume is created only once and the same is shared. So, writes to the volume at the same time may cause random behaviour
 
 
 From where would you download the package repository URL to set up docker enterprise edition on your machine? Docker hub / Docker store. From where would you download license keys Docker hub / Docker store
