@@ -172,9 +172,15 @@ $ docker info -f '{{json .SecurityOptions}}' | python -m json.tool
 ```
 When we create a container, the root user inside of it has full access to anything within container but cannot modify host directories
 
-Check docker info:
-
-
+Cgroup options:
+Some options to memorise:
+``
+  --cpu-shares
+  --cpuset-cpus
+  --memory-reservation
+  --kernel-memory
+ ``
+ 
 ---
 
 ##### Legacy default Bridge network:
