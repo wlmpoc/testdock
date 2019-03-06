@@ -22,8 +22,8 @@
       --default-runtime string                  Default OCI runtime for containers (default "runc")
       --default-shm-size bytes                  Default shm size for containers (default 64MiB)
       --default-ulimit ulimit                   Default ulimits for containers (default [])
-      --dns list                                DNS server to use
-      --dns-opt list                            DNS options to use
+  **    --dns list                                DNS server to use
+      --dns-opt list                            DNS options to use  **
       --dns-search list                         DNS search domains to use
       --exec-opt list                           Runtime execution options
       --exec-root string                        Root directory for execution state files (default "/var/run/docker")
