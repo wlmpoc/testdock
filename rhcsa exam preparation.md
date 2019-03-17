@@ -1,45 +1,53 @@
 Understand and use essential tools
-Access a shell prompt and issue commands with correct syntax
-Use input-output redirection (>, >>, |, 2>, etc.)
-Use grep and regular expressions to analyze text
-Access remote systems using ssh
-Log in and switch users in multiuser targets
-Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
-Create and edit text files
-Create, delete, copy, and move files and directories
-Create hard and soft links
-List, set, and change standard ugo/rwx permissions
-Locate, read, and use system documentation including man, info, and files in /usr/share/doc
+
+* Access a shell prompt and issue commands with correct syntax
+* Use input-output redirection (>, >>, |, 2>, etc.)
+* Use grep and regular expressions to analyze text
+* Access remote systems using ssh
+* Log in and switch users in multiuser targets
+* Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
+* Create and edit text files
+* Create, delete, copy, and move files and directories
+* Create hard and soft links
+* List, set, and change standard ugo/rwx permissions
+* Locate, read, and use system documentation including man, info, and files in /usr/share/doc
 
 
 Operate running systems
 
-Boot, reboot, and shut down a system normally
-    bios, boot loader, linuxloader, grub, kernal, init
-Boot systems into different targets manually
-    runlevels, boot targets, systemd, upstart (for older versions)
-Interrupt the boot process in order to gain access to a system
-    rd.break enforcing=0
-Identify CPU/memory intensive processes, adjust process priority with renice, and kill processes
-    namespaces, cgroups, limits, chroot
-    proc/cpuinfo, proc/meminfo, free, vmstat, lscpu
-    process management
-Locate and interpret system log files and journals
-    journald, syslog, rsyslog, upstart log
-Access a virtual machine's console
-    https://www.globalknowledge.com/us-en/resources/resource-library/articles/virtualization-terms-you-should-know/
-Start and stop virtual machines
-Start, stop, and check the status of network
-    ipaddressing v4 & v6, cidr, dns, dhcp, nat, route tables, gateways, bridge, firewall, iptables, tcp, udp
-Securely transfer files between systems
-    ssl, tls, mtls, ipsec, AES encryptions
+* Boot, reboot, and shut down a system normally
+
+  --  bios, boot loader, linuxloader, grub, kernal, init
+* Boot systems into different targets manually
+
+    -- runlevels, boot targets, systemd, upstart (for older versions)
+* Interrupt the boot process in order to gain access to a system
+
+    -- rd.break enforcing=0
+* Identify CPU/memory intensive processes, adjust process priority with renice, and kill processes
+
+   -- namespaces, cgroups, limits, chroot, proc/cpuinfo, proc/meminfo, free, vmstat, lscpu,
+   process management
+* Locate and interpret system log files and journals
+
+    -- journald, syslog, rsyslog, upstart log
+* Access a virtual machine's console
+ --   https://www.globalknowledge.com/us-en/resources/resource-library/articles/virtualization-terms-you-should-know/
+    
+* Start and stop virtual machines
+* Start, stop, and check the status of network
+
+   -- ipaddressing v4 & v6, cidr, dns, dhcp, nat, route tables, gateways, bridge, firewall, iptables, tcp, udp
+* Securely transfer files between systems
+   -- ssl, tls, mtls, ipsec, AES encryptions
 
 
 Configure local storage
-List, create, delete partitions on MBR and GPT disks
-Create and remove physical volumes, assign physical volumes to volume groups, and create and delete logical volumes
-Configure systems to mount file systems at boot by Universally Unique ID (UUID) or label
-Add new partitions and logical volumes, and swap to a system non-destructively
+
+* List, create, delete partitions on MBR and GPT disks
+* Create and remove physical volumes, assign physical volumes to volume groups, and create and delete logical volumes
+* Configure systems to mount file systems at boot by Universally Unique ID (UUID) or label
+* Add new partitions and logical volumes, and swap to a system non-destructively
 Create and configure file systems
 Create, mount, unmount, and use vfat, ext4, and xfs file systems
 Mount and unmount CIFS and NFS network file systems
