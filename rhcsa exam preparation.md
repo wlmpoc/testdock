@@ -32,9 +32,11 @@ Operate running systems
 
     -- journald, syslog, rsyslog, upstart log
 * Access a virtual machine's console
+
  --   https://www.globalknowledge.com/us-en/resources/resource-library/articles/virtualization-terms-you-should-know/
     
 * Start and stop virtual machines
+
 * Start, stop, and check the status of network
 
    -- ipaddressing v4 & v6, cidr, dns, dhcp, nat, route tables, gateways, bridge, firewall, iptables, tcp, udp
@@ -48,35 +50,35 @@ Configure local storage
 * Create and remove physical volumes, assign physical volumes to volume groups, and create and delete logical volumes
 * Configure systems to mount file systems at boot by Universally Unique ID (UUID) or label
 * Add new partitions and logical volumes, and swap to a system non-destructively
-Create and configure file systems
-Create, mount, unmount, and use vfat, ext4, and xfs file systems
-Mount and unmount CIFS and NFS network file systems
-Extend existing logical volumes
-Create and configure set-GID directories for collaboration
-Create and manage Access Control Lists (ACLs)
-Diagnose and correct file permission problems
-Deploy, configure, and maintain systems
-Configure networking and hostname resolution statically or dynamically
-Schedule tasks using at and cron
-Start and stop services and configure services to start automatically at boot
-Configure systems to boot into a specific target automatically
-Install Red Hat Enterprise Linux systems as virtual guests
-Configure systems to launch virtual machines at boot
-Configure network services to start automatically at boot
-Configure a system to use time services
-Install and update software packages from Red Hat Network, a remote repository, or from the local file system
-Update the kernel package appropriately to ensure a bootable system
-Modify the system bootloader
-Manage users and groups
-Create, delete, and modify local user accounts
-Change passwords and adjust password aging for local user accounts
-Create, delete, and modify local groups and group memberships
-Configure a system to use an existing authentication service for user and group information
-Manage security
-Configure firewall settings using firewall-config, firewall-cmd, or iptables
-Configure key-based authentication for SSH
-Set enforcing and permissive modes for SELinux
-List and identify SELinux file and process context
-Restore default file contexts
-Use boolean settings to modify system SELinux settings
-Diagnose and address routine SELinux policy violations
+* Create and configure file systems
+* Create, mount, unmount, and use vfat, ext4, and xfs file systems
+* Mount and unmount CIFS and NFS network file systems
+* Extend existing logical volumes
+* Create and configure set-GID directories for collaboration
+* Create and manage Access Control Lists (ACLs)
+* Diagnose and correct file permission problems
+* Deploy, configure, and maintain systems
+* Configure networking and hostname resolution statically or dynamically
+* Schedule tasks using at and cron
+* Start and stop services and configure services to start automatically at boot
+* Configure systems to boot into a specific target automatically
+* Install Red Hat Enterprise Linux systems as virtual guests
+* Configure systems to launch virtual machines at boot
+* Configure network services to start automatically at boot
+* Configure a system to use time services
+* Install and update software packages from Red Hat Network, a remote repository, or from the local file system
+* Update the kernel package appropriately to ensure a bootable system
+* Modify the system bootloader
+* Manage users and groups
+* Create, delete, and modify local user accounts
+* Change passwords and adjust password aging for local user accounts
+* Create, delete, and modify local groups and group memberships
+* Configure a system to use an existing authentication service for user and group information
+* Manage security
+* Configure firewall settings using firewall-config, firewall-cmd, or iptables
+* Configure key-based authentication for SSH
+* Set enforcing and permissive modes for SELinux
+* List and identify SELinux file and process context
+* Restore default file contexts
+* Use boolean settings to modify system SELinux settings
+* Diagnose and address routine SELinux policy violations
